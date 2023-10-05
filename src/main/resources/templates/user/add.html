@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
-    <title>Route database</title>
+    <title>User database</title>
 </head>
 <body>
-<h1>Add route</h1>
+<h1>Add New Users</h1>
 
-<form method="POST" th:object="${route}" th:action="@{/addRoute}">
-    <h4>Enter your route</h4>
+<form method="POST">
 
-    <label for="name">Route name</label>
+    <h4>New User:</h4>
 
-    <input type="text" th:field="*{routetest.name}"/>
-    <input type="text" th:field="*{routetest.grade}"/>
+    <label>Username:
+        <input type="text" name="username" th:value="*{username}"/>
+    </label>
 
-    <button>Submit</button>
+    <label>Email:
+        <input type="email" name="email" th:value="*{email}"/>
+    </label>
+
+    <label>Password:
+        <input type="text" name="password" th:value="*{password}"/>
+    </label>
+
+    <button type="submit">Create New User</button>
 
 </form>
-
-<p><a href="/">Home</a></p>
 </body>
 </html>
