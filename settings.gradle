@@ -1,1 +1,3 @@
 rootProject.name = 'spa-day'
+include 'src'
+
