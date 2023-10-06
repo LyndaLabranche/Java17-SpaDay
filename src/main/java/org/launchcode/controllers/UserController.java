@@ -22,12 +22,16 @@ public class UserController {
     @PostMapping("/add")
     public String processAddUserForm(Model model, @ModelAttribute User user, String verify) {
             // add form submission handling code here
+            verify ="12345";
             if(!Objects.equals(user.getPassword(), verify)){
                 model.addAttribute("error", "Please make sure your passwords match!");
                 model.addAttribute("username", user.getUsername());
                 model.addAttribute("email", user.getEmail());
-                return "user.add";
+                return "/user/add";
             }else{
+//                UserData.add(user);
+                model.addAttribute("username", user.getUsername());
+//                model.addAttribute("users", UserData.getAll());
                 return "/user/index";
             }
     }
